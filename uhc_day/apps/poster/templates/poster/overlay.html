@@ -21,7 +21,7 @@
     <link href="http://netdna.bootstrapcdn.com/bootswatch/3.0.3/yeti/bootstrap.min.css" rel="stylesheet">
 
 
-    <title>{% block title %}UHC Day Profile Pic Maker{% endblock %}</title>
+    <title>{% block title %}UHC Day Virtual Photo Booth{% endblock %}</title>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -82,9 +82,22 @@
 
 
 <div class="container">
-<h1>Make Your UHC Day Profile Picture</h1>
+<div class="head">
+    <h1>UHC Day Virtual Photo Booth</h1>
+    <img src="http://uhc-day.s3.amazonaws.com/other/uhc-day-propic.png" />
+</div>
 <p>
-To make your UHC Day pro pic, choose a background picture, crop it (the larger selection you use, the bigger the final picture will be. Drag the corners of the selection box to use a larger area), and click submit. Note: When using the back button on your browser to adjust the cropping you've done, you may need to re-browse for the picture, or refresh the page, for the cropping tool to reappear.
+Show your support for #healthforall by creating a custom UHC Day profile picture in our virtual photo booth! Here's how:
+</p>
+<p>
+    <ol>
+        <li>Choose your picture</li>
+        <li>Crop your picture by dragging the corners of the selection box. The larger your selection, the bigger the final picture will be. (Note: If you want to use the "back" button on your browser to adjust the cropping you've done, you may need to re-browse for the picture or refresh the page for the cropping tool to reappear.)</li>
+        <li>Click "Submit" and save your new photo to your computer or phone! </li>
+    </ol>
+</p>
+<p>
+    Once you have your photo, share it on social media with a caption that completes the phrase "#healthforall because _____________." Be sure to tag @UHC_Day and encourage your networks to make their own custom photos as well! 
 </p>
 {% for error in form.image.errors %}
 	<div class="alert alert-danger">{{ error }}</div>
@@ -104,11 +117,38 @@ To make your UHC Day pro pic, choose a background picture, crop it (the larger s
     <div id="image_holder"></div>
 
 <div class="btn-container">
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary submit-btn">Submit</button>
 </div>
 </form>
       
     </div><!-- /.container -->
 
+<style>
+.head
+{
+    text-align:center;
+    margin:auto;
+}
+
+.head img
+{
+    margin:20px 0;
+}
+
+.submit-btn
+{
+    border: #ffcb09 solid 3px;
+    color:black;
+    background: transparent;
+    margin-bottom:20px;
+}
+
+.submit-btn:hover, .submit-btn:active
+{
+    border: #ffcb09 solid 3px;
+    background: #ffcb09;
+    color:black;
+}
+</style>
   </body>
 </html>

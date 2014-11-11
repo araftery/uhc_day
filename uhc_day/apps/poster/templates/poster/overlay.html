@@ -80,6 +80,24 @@
 
 <body>
 
+<form name="ignore" class="hidden">
+    <input type="hidden" id="page_is_back" name="page_is_back" value="0" />
+</form>
+
+<script>
+    var back_bit = document.getElementById('page_is_back');
+    function mark_page_back() {
+        back_bit.value = '1';
+    }
+    if (back_bit.value == '1') {
+        window.location.reload();
+    }
+    else
+    {
+        mark_page_back();
+    }
+</script>
+
 
 <div class="container">
 <div class="head">
@@ -117,7 +135,7 @@ Show your support for #healthforall by creating a custom UHC Day profile picture
     <div id="image_holder"></div>
 
 <div class="btn-container">
-	<button type="submit" class="btn btn-primary submit-btn">Submit</button>
+	<button type="submit" class="btn submit-btn">Submit</button>
 </div>
 </form>
       
@@ -143,7 +161,7 @@ Show your support for #healthforall by creating a custom UHC Day profile picture
     margin-bottom:20px;
 }
 
-.submit-btn:hover, .submit-btn:active
+.submit-btn:hover, .submit-btn:active, .submit-btn:visited
 {
     border: #ffcb09 solid 3px;
     background: #ffcb09;

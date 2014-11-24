@@ -20,6 +20,7 @@ def overlay(request):
             w = form.cleaned_data.get('w')
             h = form.cleaned_data.get('h')
             image = form.cleaned_data.get('image')
+            overlay_choice = form.cleaned_data.get('overlay_choice')
             image_file = cStringIO.StringIO(image.read())
             background = Image.open(image_file)
 
@@ -27,10 +28,10 @@ def overlay(request):
             sizes = [200, 250, 300, 350, 400, 450, 500, 550, 600]
 
             size = general.round_down(w, sizes)
-            background = background.convert('RGB').crop((x, y, x+w, y+h)).resize((size, size), Image.ANTIALIAS)
+            background = background.convert('RGB').crop((x, y, x + w, y + h)).resize((size, size), Image.ANTIALIAS)
 
             # overlay
-            foreground = Image.open(storage.open('/overlays/600.png', 'r')).resize((size, size), Image.ANTIALIAS)
+            foreground = Image.open(storage.open('/overlays/{}_600.png'.format(overlay_choice), 'r')).resize((size, size), Image.ANTIALIAS)
             background.paste(foreground, (0, 0), foreground)
 
             output = cStringIO.StringIO()

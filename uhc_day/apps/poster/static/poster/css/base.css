@@ -7,6 +7,14 @@ h1
 {
 	text-align:center;
 	display:block;
+	margin-bottom:0;
+	padding-bottom:0;
+}
+
+h2
+{
+	padding-top:0;
+	margin-top:0 !important;
 }
 
 .btn-primary
@@ -24,7 +32,23 @@ h1
 
 p
 {
-	text-align:center;
 	display:block;
 	margin-top:10px !important;
+}
+
+table.overlay-choice td
+{
+	padding-right:10px;
+	text-align:center;
+}
+
+.head
+{
+    text-align:center;
+    margin:auto;
+}
+
+.head img
+{
+    margin:20px 0;
 }

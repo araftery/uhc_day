@@ -101,22 +101,35 @@
 
 <div class="container">
 <div class="head">
-    <h1>UHC Day Virtual Photo Booth</h1>
-    <img src="http://uhc-day.s3.amazonaws.com/other/uhc-day-propic.png" />
+    <h1>Universal Health Coverage Day </h1>
+    <h2>Virtual Photo Booth</h2>
 </div>
 <p>
-Show your support for #healthforall by creating a custom UHC Day profile picture in our virtual photo booth! Here's how:
+Show your support for #HealthForAll by creating a custom UHC Day picture with our virtual photo booth! Here's how:
 </p>
 <p>
+    <h4><strong>ON YOUR COMPUTER:</strong></h4>
     <ol>
-        <li>Choose your picture</li>
-        <li>Crop your picture by dragging the corners of the selection box. The larger your selection, the bigger the final picture will be. (Note: If you want to use the "back" button on your browser to adjust the cropping you've done, you may need to re-browse for the picture or refresh the page for the cropping tool to reappear.)</li>
-        <li>Click "Submit" and save your new photo to your computer or phone! </li>
+        <li>Select your photo booth template. </li>
+        <li>Upload a picture from your computer. </li>
+        <li>Crop your picture by dragging the corners of the selection box.</li>
+        <li>Click "Submit" and save your new photo booth picture.</li>
+        <li>Share your picture on social media. Start your caption with "#HealthForAll because..." and tell us why you support universal health coverage. Be sure to tag @UHC_Day and encourage others to create pictures of their own (e.g., by tagging other partners, friends or members of your organization’s network).</li>
     </ol>
 </p>
+
 <p>
-    Once you have your photo, share it on social media with a caption that completes the phrase "#healthforall because _____________." Be sure to tag @UHC_Day and encourage your networks to make their own custom photos as well! 
+    <h4><strong>ON YOUR PHONE:</strong></h4>
+    <h5>Note: the photo booth tool works best on computer.</h5  >
+    <ol>
+        <li>Select your photo booth template.</li>
+        <li>Choose an existing photo.</li>
+        <li>Remember to zoom out first, then drag one finger across the screen to crop.</li>
+        <li>Click "Submit" and save your new photo booth picture.</li>
+        <li>Share your picture on social media. Start your caption with "#HealthForAll because..." and tell us why you support universal health coverage. Be sure to tag @UHC_Day and encourage others to create pictures of their own (e.g., by tagging other partners, friends or members of your organization’s network).</li>
+    </ol>
 </p>
+
 {% for error in form.image.errors %}
 	<div class="alert alert-danger">{{ error }}</div>
 {% endfor %}
@@ -127,6 +140,18 @@ Show your support for #healthforall by creating a custom UHC Day profile picture
     <input type="hidden" id="w" name="w" />
     <input type="hidden" id="h" name="h" />
 
+    <div class="form-group">
+    <table class="overlay-choice">
+        <tr>
+            <td><img src="{% static 'poster/img/single_example.jpg' %}" width="150" /></td>
+            <td><img src="{% static 'poster/img/multiple_example.jpg' %}" width="150" /></td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="overlay_choice" value="single" checked></td>
+            <td><input type="radio" name="overlay_choice" value="multiple"></td>
+        </tr>
+    </table>
+    </div>
 	<div class="form-group">
 		<label for="id_image">Image:</label>
 		<input id="id_image" name="image" type="file" />

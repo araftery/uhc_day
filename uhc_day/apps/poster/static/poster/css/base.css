@@ -50,5 +50,46 @@ table.overlay-choice td
 
 .head img
 {
-    margin:20px 0;
+    margin: 20px 0;
+}
+
+@media (max-width: 699px) {
+	.examples-table
+	{
+		width: 100%;
+	}
+
+	.examples-table td
+	{
+		padding-right: 3px;
+		padding-left: 3px;
+	}
+}
+
+@media (min-width: 700px) {
+	.examples-table
+	{
+		width: 75%;
+	}
+
+	.examples-table td
+	{
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
+
+.examples-table
+{
+	margin: 15px auto;
+}
+
+.examples-table td
+{
+	width: 50%;
+}
+
+.examples-table td img
+{
+	width:100%;
 }

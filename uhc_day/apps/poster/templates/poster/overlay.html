@@ -100,6 +100,9 @@
 
 
 <div class="container">
+<div class="back-btn">
+    <a href="http://www.universalhealthcoverageday.org/"><img src="{% static 'common/img/uhc_home_btn.png' %}" width="150" /></a>
+</div>
 <div class="head">
     <h1>Universal Health Coverage Day </h1>
     <h2>Virtual Photo Booth</h2>
@@ -143,7 +146,7 @@ Show your support for #HealthForAll by creating a custom UHC Day picture with ou
 {% for error in form.image.errors %}
 	<div class="alert alert-danger">{{ error }}</div>
 {% endfor %}
-<form method="POST" enctype="multipart/form-data" class="form-container">
+<form method="POST" enctype="multipart/form-data" class="form-container" target="_blank">
 	{% csrf_token %}
     <input type="hidden" id="x" name="x" />
     <input type="hidden" id="y" name="y" />

@@ -43,7 +43,7 @@
 
 	function bind_it()
 	{
-		$('form img').Jcrop({
+		$('form img:not(.keep)').Jcrop({
 			minSize: [200, 200],
 			aspectRatio: 1.0,
 			onSelect: updateCoords,

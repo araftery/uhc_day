@@ -54,7 +54,7 @@
 
 	$(document).ready(function() {
 		$("#id_image").change(function(e) {
-			$('img').remove();
+			$('img:not(.keep)').remove();
 			$('.jcrop-holder').remove();
 		    for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
 		        var file = e.originalEvent.srcElement.files[i];
@@ -101,7 +101,7 @@
 
 <div class="container">
 <div class="back-btn">
-    <a href="http://www.universalhealthcoverageday.org/"><img src="{% static 'common/img/uhc_home_btn.png' %}" width="150" /></a>
+    <a href="http://www.universalhealthcoverageday.org/"><img class="keep" src="{% static 'common/img/uhc_home_btn.png' %}" width="150" /></a>
 </div>
 <div class="head">
     <h1>Universal Health Coverage Day </h1>
@@ -114,8 +114,8 @@ Show your support for #HealthForAll by creating a custom UHC Day picture with ou
 <div>
     <table class="examples-table">
         <tr>
-            <td><img src="{% static 'poster/img/single_example.jpg' %}" /></td>
-            <td><img src="{% static 'poster/img/multiple_example.jpg' %}" /></td>
+            <td><img class="keep" src="{% static 'poster/img/single_example.jpg' %}" /></td>
+            <td><img class="keep" src="{% static 'poster/img/multiple_example.jpg' %}" /></td>
         </tr>
     </table>
 </div>
@@ -156,8 +156,8 @@ Show your support for #HealthForAll by creating a custom UHC Day picture with ou
     <div class="form-group">
     <table class="overlay-choice">
         <tr>
-            <td><img src="{% static 'poster/img/single_example.jpg' %}" width="150" /></td>
-            <td><img src="{% static 'poster/img/multiple_example.jpg' %}" width="150" /></td>
+            <td><img class="keep" src="{% static 'poster/img/single_example.jpg' %}" width="150" /></td>
+            <td><img class="keep" src="{% static 'poster/img/multiple_example.jpg' %}" width="150" /></td>
         </tr>
         <tr>
             <td><input type="radio" name="overlay_choice" value="single" checked></td>
